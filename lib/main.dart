@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 void main() {
   runApp(const Bookly());
+  print('eslam');
 }
 
 class Bookly extends StatelessWidget {
