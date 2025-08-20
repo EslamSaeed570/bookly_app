@@ -1,4 +1,3 @@
-
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/similer_books_list_view.dart';
 import 'package:flutter/material.dart';
