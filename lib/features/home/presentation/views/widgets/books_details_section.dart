@@ -14,7 +14,7 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .28),
-          child: const CustomItem(),
+          child: const CustomItem(imageUrl: 'https://img.favpng.com/4/9/25/book-school-clip-art-png-favpng-2GQTF3L6kuSd3dE99YLWBMd2X.jpg',),
         ),
         const SizedBox(height: 30),
         Text(

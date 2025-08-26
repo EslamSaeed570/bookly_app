@@ -13,7 +13,7 @@ class SimilerBookListViewItem extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
-            child: CustomItem(),
+            child: CustomItem(imageUrl: 'https://img.favpng.com/4/9/25/book-school-clip-art-png-favpng-2GQTF3L6kuSd3dE99YLWBMd2X.jpg',),
           );
         },
       ),
