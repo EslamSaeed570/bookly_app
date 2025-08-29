@@ -8,14 +8,14 @@ import 'package:bookly_app/features/home/presentation/views/widgets/custom_item.
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key, required this.bookModel});
+class NewestBooksListViewItem extends StatelessWidget {
+  const NewestBooksListViewItem({super.key, required this.bookModel});
   final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsView);
+        GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: bookModel);
       },
       child: SizedBox(
         height: 115,
@@ -45,6 +45,7 @@ class BestSellerListViewItem extends StatelessWidget {
                   ),
                   Text(
                     bookModel.volumeInfo.authors![0],
+                    overflow: TextOverflow.ellipsis,
                     style: Styles.textStyle14,
                   ),
                   const SizedBox(
@@ -61,8 +62,8 @@ class BestSellerListViewItem extends StatelessWidget {
                         flex: 4,
                       ),
                       BookRating(
-                        rating: 2,
-                        pageCount: bookModel.volumeInfo.pageCount!,
+                        rating: bookModel.volumeInfo.pageCount!,
+                        pageCount: 2,
                       ),
                       const Spacer(
                         flex: 1,
