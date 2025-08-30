@@ -1,6 +1,5 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
-
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
@@ -8,8 +7,8 @@ import 'package:bookly_app/features/home/presentation/views/widgets/custom_item.
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class NewestBooksListViewItem extends StatelessWidget {
-  const NewestBooksListViewItem({super.key, required this.bookModel});
+class SearchresultListViewItem extends StatelessWidget {
+  const SearchresultListViewItem({super.key, required this.bookModel});
   final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,8 @@ class NewestBooksListViewItem extends StatelessWidget {
         child: Row(
           children: [
             CustomItem(
-                imageUrl: bookModel.volumeInfo.imageLinks.smallThumbnail),
+              imageUrl: bookModel.volumeInfo.imageLinks.smallThumbnail,
+            ),
             const SizedBox(
               width: 20,
             ),
@@ -44,7 +44,9 @@ class NewestBooksListViewItem extends StatelessWidget {
                     height: 3,
                   ),
                   Text(
-                    bookModel.volumeInfo.authors![0],
+                    bookModel.volumeInfo.authors != null
+                        ? bookModel.volumeInfo.authors![0]
+                        : "No Author",
                     overflow: TextOverflow.ellipsis,
                     style: Styles.textStyle14,
                   ),
@@ -62,7 +64,6 @@ class NewestBooksListViewItem extends StatelessWidget {
                         flex: 4,
                       ),
                       BookRating(
-                        
                         pageCount: bookModel.volumeInfo.pageCount!,
                       ),
                       const Spacer(
