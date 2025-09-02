@@ -9,7 +9,7 @@ class CustomItem extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(16),
       child: AspectRatio(
-        aspectRatio: 2.2 / 3,
+        aspectRatio: 2 / 3,
         child: CachedNetworkImage(
           imageUrl: imageUrl,
           fit: BoxFit.fill,

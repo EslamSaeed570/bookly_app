@@ -17,7 +17,7 @@ class FeaturedBooksListView extends StatelessWidget {
         builder: (context, state) {
       if (state is FeaturedBooksSuccess) {
         return SizedBox(
-          height: MediaQuery.of(context).size.height * .3,
+          height: MediaQuery.of(context).size.height * .25,
           child: ListView.builder(
             physics: const BouncingScrollPhysics(),
             itemCount: state.books.length,
@@ -27,7 +27,8 @@ class FeaturedBooksListView extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: GestureDetector(
                   onTap: () {
-                    GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: state.books[index]);
+                    GoRouter.of(context).push(AppRouter.kBookDetailsView,
+                        extra: state.books[index]);
                   },
                   child: CustomItem(
                     imageUrl:

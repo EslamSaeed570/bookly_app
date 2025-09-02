@@ -17,7 +17,7 @@ class SearchresultListViewItem extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: bookModel);
       },
       child: SizedBox(
-        height: 115,
+        height: 135,
         child: Row(
           children: [
             CustomItem(

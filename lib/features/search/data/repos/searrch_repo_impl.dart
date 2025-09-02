@@ -7,20 +7,23 @@ import 'package:dio/dio.dart';
 
 class SearrchRepoImpl implements SearchRepo {
   @override
-   final ApiService apiService;
+  final ApiService apiService;
 
-  SearrchRepoImpl({required  this.apiService});
-  Future<Either<Failure, List<BookModel>>> FeatchSearchResult({required String search}) async {
+  SearrchRepoImpl({required this.apiService});
+  Future<Either<Failure, List<BookModel>>> FeatchSearchResult(
+      {required String search}) async {
     try {
       var data = await apiService.get(
-          endPoints:
-              'volumes?q=$search&Sorting=newest&Filtering=free-ebooks');
+          endPoints: 'volumes?q=$search&Sorting=newest&Filtering=free-ebooks');
       List<BookModel> books = [];
-      for (var item in data['items']) {
-        books.add(BookModel.fromJson(item));
+      if (data['totalItems'] != 0) {
+        for (var item in data['items']) {
+          books.add(BookModel.fromJson(item));
+        }
+        return right(books);
+      } else {
+        return left(ServerFailure('Oops, nothing here 😕, try search again!'));
       }
-
-      return right(books);
     } catch (e) {
       if (e is DioException) {
         return left(
