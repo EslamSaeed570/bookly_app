@@ -26,7 +26,7 @@ class SimilerBookListViewItem extends StatelessWidget {
                   padding:const EdgeInsets.symmetric(horizontal: 5),
                   child: CustomItem(
                     imageUrl:
-                        state.books[index].volumeInfo.imageLinks.smallThumbnail,
+                        state.books[index].volumeInfo.imageLinks?.smallThumbnail??'',
                   ),
                 );
               },

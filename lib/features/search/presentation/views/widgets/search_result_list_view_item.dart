@@ -21,7 +21,7 @@ class SearchresultListViewItem extends StatelessWidget {
         child: Row(
           children: [
             CustomItem(
-              imageUrl: bookModel.volumeInfo.imageLinks.smallThumbnail,
+              imageUrl: bookModel.volumeInfo.imageLinks?.smallThumbnail??'',
             ),
             const SizedBox(
               width: 20,
