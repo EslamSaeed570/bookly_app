@@ -22,7 +22,7 @@ class SearrchRepoImpl implements SearchRepo {
         }
         return right(books);
       } else {
-        return left(ServerFailure('Oops, nothing here 😕, try search again!'));
+        return left(ServerFailure('Oops, no Books here 😕, try search again!'));
       }
     } catch (e) {
       if (e is DioException) {

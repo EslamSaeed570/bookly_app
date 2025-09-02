@@ -5,6 +5,7 @@ import 'package:bookly_app/features/search/presentation/views/widgets/search_res
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
 
